@@ -46,7 +46,7 @@
             "Condition": {
                 "StringLike": {
                     "s3:prefix": [
-                        "folder01/Inbound/InsideInbound/"
+                        "folder01/Inbound/InsideInbound/*"
                     ]
                 }
             }
