@@ -1,0 +1,55 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "AllowListAllBucketsOnAccountLevel",
+            "Effect": "Allow",
+            "Action": [
+                "s3:ListAllMyBuckets"
+            ],
+            "Resource": [
+                "arn:aws:s3:::*"
+            ]
+        },
+        {
+            "Sid": "AllowConsoleNavigationToInbound",
+            "Effect": "Allow",
+            "Action": [
+                "s3:ListBucket"
+            ],
+            "Resource": [
+                "arn:aws:s3:::deblohit-on-cloud"
+            ],
+            "Condition": {
+                "StringEquals": {
+                    "s3:prefix": [
+                        "",
+                        "folder01/",
+                        "folder01/Inbound/",
+						"folder01/Inbound/InsideInbound/"
+                    ],
+                    "s3:delimiter": [
+                        "/"
+                    ]
+                }
+            }
+        },
+        {
+            "Sid": "AllowListingInsideInboundFolder",
+            "Effect": "Allow",
+            "Action": [
+                "s3:ListBucket"
+            ],
+            "Resource": [
+                "arn:aws:s3:::deblohit-on-cloud"
+            ],
+            "Condition": {
+                "StringLike": {
+                    "s3:prefix": [
+                        "folder01/Inbound/InsideInbound/"
+                    ]
+                }
+            }
+        }
+    ]
+}
