@@ -25,8 +25,7 @@
                     "s3:prefix": [
                         "",
                         "folder01/",
-                        "folder01/Inbound/",
-						"folder01/Inbound/InsideInbound/"
+                        "folder01/Inbound/"
                     ],
                     "s3:delimiter": [
                         "/"
